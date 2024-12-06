@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/normalize.css">
+    <link rel="stylesheet" href="CSS/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <nav><!--navegador inicio-->
+        <ul>
+            <li><a class="active" href="#home">Inicio</a></li>
+            <li><a href="#news">Nuevo</a></li>
+            <li><a href="#contact">Comunidad</a></li>
+            <li style="float:right"><a href="#about">Nosotros</a></li>
+          </ul>
+          
+    </nav><!--navegador fin-->
+
+    <header class="roboto-regular">
+
+
+        <div class="container"> <!-- Contenedor principal -->
+            <div class="ContainerTexto"> <!-- Contenedor secundario -->
+                <h1 class="tituloprincipal">Mundo Mágico </h1>
+                <p class="TextoBajada">"El mundo que nos rodea está lleno de maravillas invisibles al ojo humano" </p>
+                    <p class="TextoBajada">Descubre la magia que hay en ti y conecta con la naturaleza</p>
+                <a class="boton" href="#">Únete</a>
+            </div>
+          
+        </div>
+       
+     </header> <!-- Nuestra primeera web-->
+     
+
+    <main><!--cuerpo inicio-->
+        <h1 class="titulocontenidos">¿Qué es la magia? </h1>
+        <section>
+            <p>
+                La magia es un susurro antiguo que fluye entre las ramas de los árboles, un latido en la tierra que conecta el alma con lo invisible. Es el poder de transformar lo mundano en maravilla, de ver lo que otros no ven y sentir lo que el viento calla. La brujería verde es su forma más sabia, tejida con hierbas, raíces y el canto de la naturaleza. Es la magia de la tierra misma, la alquimia de las estaciones y el pacto con el misterio que habita en cada hoja, cada flor, cada sombra en el bosque. Con un toque de hierba y una palabra pronunciada en la lengua olvidada de los ancestros, la brujería verde invoca el poder de curar, de proteger y de guiar, respetando el equilibrio de los seres y el eco profundo del universo.</p>
+        </section> <!-- Nuestra primeera web-->
+     
+    
+
+        
+    <div class="contenedor columnas">
+        
+        <div class="entrada-blog">
+            <h1>Conexión</h1>
+            <img src="img/conexion.jpeg">
+            <p>
+                La conexión mágica es un lazo invisible que une al ser humano con el universo, un susurro compartido entre la tierra, las estrellas y el alma.</p>
+            <a href="#">Leer más</a>
+        </div>
+
+        <div class="entrada-blog">
+            <h1>Meditación</h1>
+            <img src="img/meditacion.jpeg">
+            <p>
+                La meditación es un silencio profundo donde el alma se encuentra consigo misma, un espacio donde el caos se disuelve y la mente se libera. </p>
+            <a href="#">Leer más</a>
+        </div>
+
+        <div class="entrada-blog">
+            <h1>Enraizamiento</h1>
+            <img src="img/enraizamiento.jpeg">
+            <p>El enraizamiento mágico es el acto de conectar profundamente con la tierra, anclando el alma en su vibrante energía.</p>
+            <a href="#">Leer más</a>
+        </div>
+    </div>
+
+    <div class="carrusel">
+        <div class="imagenes">
+            <img class="imagen" src="IMG/ritual.jpeg">
+            <img class="imagen" src="IMG/ritual2.jpeg" alt="Imagen 2">
+            <img class="imagen" src="IMG/ritual3.jpeg" alt="Imagen 3">
+            <img class="imagen" src="IMG/ritual4.jpeg" alt="Imagen 4">
+    </div>
+
+    <div class="puntos">
+        <span class="punto active" onclick="cambiarImagen(0)"></span>
+        <span class="punto" onclick="cambiarImagen(1)"></span>
+        <span class="punto" onclick="cambiarImagen(2)"></span>
+        <span class="punto" onclick="cambiarImagen(3)"></span>
+
+    </div>
+
+
+    <!-- Inline JavaScript -->
+    <script>
+        let index = 0;
+        const imagenes = document.querySelector('.imagenes');
+        const puntos = document.querySelectorAll('.punto');
+
+        function cambiarImagen(nuevoIndex) {
+            index = nuevoIndex;
+            actualizarCarrusel();
+        }
+
+        function actualizarCarrusel() {
+            imagenes.style.transform = `translateX(${-index * 100}%)`;
+            puntos.forEach((punto, i) => {
+                punto.classList.toggle('active', i === index);
+            });
+        }
+
+        // Cambiar de imagen cada 3 segundos
+        setInterval(() => {
+            index = (index + 1) % puntos.length; // Incrementar el índice
+            actualizarCarrusel(); // Actualizar el carrusel
+        }, 3000);
+    </script>
+
+    </main><!--cuerpo fin-->
+
+    <footer><!--pie de pagina inicio-->
+        <h1 class="titulofooter">Reserva tu consulta</h1>
+       <!-- formulario sección uno-->
+ <!-- para mejorar el espacio y que no se superpongan los objetos-->
+
+ <section class="fondo__formulario">
+
+    <div class="contenedor">
+        <form class="formulario">
+
+            <!-- inicio Formulario -->
+            <fieldset>
+                <div class="contenedor-campo">
+                    
+                    <div class="campo">
+                      
+                        <input class="input-text" class="campo" type="text" placeholder="Tu nombre">
+                    </div>
+
+                    <div class="campo">
+                       
+                        <input class="input-text" type="email" name="" id="" placeholder="Tu email">
+                    </div>
+                </div>
+                <div class="alinear-derecha flex">
+                    <input class="boton_form w-100" type="submit" value="Enviar">
+                </div>
+                
+            </fieldset>
+
+        </form>
+    </div>
+
+    </footer><!--pie de pagina fin-->
+    
+</body>
+</html>
